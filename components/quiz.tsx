@@ -210,10 +210,10 @@ export function Quiz({ config = wineQuizConfig }: QuizProps) {
     <div
       className={`w-full max-w-md mx-auto transition-opacity duration-300 ${fade ? "opacity-0" : "opacity-100"}`}
     >
-            {stage === "intro" && (
+      {stage === "intro" && (
         <div className="text-center">
           <div className="text-6xl mb-6">{config.emoji}</div>
-          <h1 className="font-(family-name:--font-playfair) text-3xl font-bold text-cream mb-3">
+          <h1 className="font-(family-name:---font-audiowide) text-3xl font-bold text-cream mb-3">
             {config.title}
           </h1>
           <p className="text-cream/50 text-sm mb-2">{config.subtitle}</p>
@@ -229,7 +229,7 @@ export function Quiz({ config = wineQuizConfig }: QuizProps) {
         </div>
       )}
 
-            {stage === "question" && (
+      {stage === "question" && (
         <div>
           <div className="flex items-center gap-3 mb-8">
             <div className="flex-1 h-1 bg-cream/10 rounded-full overflow-hidden">
@@ -245,7 +245,7 @@ export function Quiz({ config = wineQuizConfig }: QuizProps) {
             </span>
           </div>
 
-          <h2 className="font-(family-name:--font-playfair) text-2xl font-bold text-cream text-center mb-8">
+          <h2 className="font-(family-name:---font-audiowide) text-2xl font-bold text-cream text-center mb-8">
             {config.questions[currentQ].question}
           </h2>
 
@@ -263,7 +263,7 @@ export function Quiz({ config = wineQuizConfig }: QuizProps) {
         </div>
       )}
 
-            {stage === "result" && (
+      {stage === "result" && (
         <div className="text-center">
           <div style={{ position: "fixed", left: -9999, top: -9999 }}>
             <div
@@ -294,7 +294,7 @@ export function Quiz({ config = wineQuizConfig }: QuizProps) {
                     color: result.accent,
                     fontSize: 16,
                     fontWeight: 600,
-                    fontFamily: "var(--font-playfair)",
+                    fontFamily: "var(---font-audiowide)",
                     marginBottom: 6,
                   }}
                 >
@@ -313,7 +313,7 @@ export function Quiz({ config = wineQuizConfig }: QuizProps) {
             </div>
           </div>
 
-                    <ResultCard result={result} />
+          <ResultCard result={result} />
 
           <div className="flex flex-col gap-3 mt-6">
             <button
@@ -379,7 +379,7 @@ export function Quiz({ config = wineQuizConfig }: QuizProps) {
               }
               className="inline-flex items-center justify-center gap-2 bg-gold text-dark px-7 py-3 rounded-full font-semibold text-sm transition-all hover:bg-gold-light hover:-translate-y-0.5 cursor-pointer"
             >
-              Suivre Episteme sur Instagram
+              Suivre Transmission sur Instagram
             </a>
 
             <button

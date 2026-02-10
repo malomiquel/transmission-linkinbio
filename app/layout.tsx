@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 import Script from "next/script";
-import { Playfair_Display, Inter } from "next/font/google";
+import { Audiowide, Inter } from "next/font/google";
 import "./globals.css";
 
-const playfair = Playfair_Display({
-  variable: "--font-playfair",
+const audiowide = Audiowide({
+  variable: "--font-audiowide",
   subsets: ["latin"],
   display: "swap",
+  weight: "400",
 });
 
 const inter = Inter({
@@ -16,11 +17,11 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Episteme - L'art de faire revivre",
+  title: "Transmission - L'art de faire revivre",
   description:
     "Association d'événements immersifs autour du Vin, de l'Art et de la Musique.",
   openGraph: {
-    title: "Episteme - L'art de faire revivre",
+    title: "Transmission - L'art de faire revivre",
     description: "Vin, Art, Musique - Découvrez nos événements immersifs.",
     type: "website",
   },
@@ -33,7 +34,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fr">
-      <body className={`${playfair.variable} ${inter.variable} antialiased`}>
+      <body className={`${audiowide.variable} ${inter.variable} antialiased`}>
         {children}
         {process.env.NEXT_PUBLIC_UMAMI_WEBSITE_ID && (
           <Script

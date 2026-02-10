@@ -17,11 +17,11 @@ export function ResultCard({ result }: ResultCardProps) {
         Tu es un
       </p>
       <div className="text-5xl mb-4">{result.emoji}</div>
-      <h2 className="font-(family-name:--font-playfair) text-3xl font-bold mb-1 text-cream">
+      <h2 className="font-(family-name:---font-audiowide) text-3xl font-bold mb-1 text-cream">
         {result.name}
       </h2>
       <p
-        className="font-(family-name:--font-playfair) italic text-lg mb-5"
+        className="font-(family-name:---font-audiowide) italic text-lg mb-5"
         style={{ color: result.accent }}
       >
         {result.title}

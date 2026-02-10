@@ -4,10 +4,13 @@ import dynamic from "next/dynamic";
 import { quizzes } from "../../../config/quizzes";
 import { QuizSkeleton } from "../../../components/quiz-skeleton";
 
-const Quiz = dynamic(() => import("../../../components/quiz").then(m => ({ default: m.Quiz })), {
-  loading: () => <QuizSkeleton />,
-  ssr: true,
-});
+const Quiz = dynamic(
+  () => import("../../../components/quiz").then((m) => ({ default: m.Quiz })),
+  {
+    loading: () => <QuizSkeleton />,
+    ssr: true,
+  },
+);
 
 type Params = Promise<{ id: string }>;
 
@@ -15,16 +18,20 @@ export async function generateStaticParams() {
   return Object.keys(quizzes).map((id) => ({ id }));
 }
 
-export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: {
+  params: Params;
+}): Promise<Metadata> {
   const { id } = await params;
   const quiz = quizzes[id];
   if (!quiz) return {};
 
   return {
-    title: `${quiz.title} | Episteme`,
+    title: `${quiz.title} | Transmission`,
     description: quiz.description,
     openGraph: {
-      title: `${quiz.title} | Episteme`,
+      title: `${quiz.title} | Transmission`,
       description: quiz.description,
       type: "website",
     },

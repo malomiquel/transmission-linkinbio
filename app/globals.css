@@ -1,33 +1,38 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-wine: #8C3A44;
-  --color-wine-dark: #5C2630;
-  --color-gold: #C9A84C;
-  --color-gold-light: #E8D48B;
-  --color-cream: #F5F0E8;
-  --color-dark: #3B1520;
-  --color-dark-card: #4E1F2E;
-  --color-muted: #6B6B6B;
+    /* Accent premium (remplace GOLD) */
+    --color-gold: #bfc7d5; /* silver champagne */
+    --color-gold-light: #e4e8f0; /* reflets premium */
+
+    /* Accent profond (remplace WINE) */
+    --color-wine: #2c2f4a; /* indigo nuit */
+    --color-wine-dark: #1a1c2e; /* presque noir bleuté */
+
+    /* Fond & neutres */
+    --color-cream: #f4f6fa; /* blanc froid premium */
+    --color-dark: #0e1018; /* noir bleuté */
+    --color-dark-card: #161a2a;
+    --color-muted: #8a90a8;
 }
 
 body {
-  background: var(--color-dark);
-  color: var(--color-cream);
+    background: var(--color-dark);
+    color: var(--color-cream);
 }
 
 @keyframes fade-in-up {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .animate-fade-in-up {
-  animation: fade-in-up 0.6s ease forwards;
-  opacity: 0;
+    animation: fade-in-up 0.6s ease forwards;
+    opacity: 0;
 }

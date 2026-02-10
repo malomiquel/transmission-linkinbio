@@ -40,7 +40,7 @@ function extractColorFromImage(file: File): Promise<string> {
         // Calculate average color
         const avg = colors.reduce(
           (acc, c) => ({ r: acc.r + c.r, g: acc.g + c.g, b: acc.b + c.b }),
-          { r: 0, g: 0, b: 0 }
+          { r: 0, g: 0, b: 0 },
         );
         avg.r = Math.floor(avg.r / samples);
         avg.g = Math.floor(avg.g / samples);
@@ -89,7 +89,10 @@ function getVariantFromColor(r: number, g: number, b: number): string {
 
 interface StoryEditorProps {
   config: StoryConfig;
-  children: (state: Record<string, string>, ref: RefObject<HTMLDivElement | null>) => ReactNode;
+  children: (
+    state: Record<string, string>,
+    ref: RefObject<HTMLDivElement | null>,
+  ) => ReactNode;
 }
 
 export function StoryEditor({ config, children }: StoryEditorProps) {
@@ -119,7 +122,9 @@ export function StoryEditor({ config, children }: StoryEditorProps) {
     setGenerating(true);
 
     // Hide elements marked for exclusion from export
-    const excludedElements = storyRef.current.querySelectorAll('[data-exclude-from-export="true"]');
+    const excludedElements = storyRef.current.querySelectorAll(
+      '[data-exclude-from-export="true"]',
+    );
     const originalDisplays: string[] = [];
     excludedElements.forEach((el, i) => {
       originalDisplays[i] = (el as HTMLElement).style.display;
@@ -170,7 +175,7 @@ export function StoryEditor({ config, children }: StoryEditorProps) {
           <span className="text-base leading-none">&larr;</span>
           Retour
         </a>
-        <h1 className="font-(family-name:--font-playfair) text-2xl font-bold text-cream">
+        <h1 className="font-(family-name:---font-audiowide) text-2xl font-bold text-cream">
           {config.title}
         </h1>
 
@@ -200,7 +205,8 @@ export function StoryEditor({ config, children }: StoryEditorProps) {
         </button>
 
         <p className="text-cream/20 text-xs text-center">
-          Image {config.dimensions.width}×{config.dimensions.height} — prête pour Instagram Stories
+          Image {config.dimensions.width}×{config.dimensions.height} — prête
+          pour Instagram Stories
         </p>
       </div>
 
@@ -218,7 +224,11 @@ function groupFieldRows(fields: StoryField[]): (StoryField | StoryField[])[] {
   const rows: (StoryField | StoryField[])[] = [];
   let i = 0;
   while (i < fields.length) {
-    if (fields[i].width === "half" && i + 1 < fields.length && fields[i + 1].width === "half") {
+    if (
+      fields[i].width === "half" &&
+      i + 1 < fields.length &&
+      fields[i + 1].width === "half"
+    ) {
       rows.push([fields[i], fields[i + 1]]);
       i += 2;
     } else {
@@ -382,7 +392,9 @@ function FieldInput({
                 <div
                   className={`w-6 h-6 rounded-full ${v.preview ?? ""} border border-white/10`}
                 />
-                <span className="text-[9px] text-cream/50 leading-none">{v.label}</span>
+                <span className="text-[9px] text-cream/50 leading-none">
+                  {v.label}
+                </span>
               </button>
             ))}
           </div>
@@ -424,8 +436,14 @@ function FieldInput({
             >
               {value ? (
                 <div className="flex items-center gap-3">
-                  <img src={value} alt="Preview" className="w-12 h-12 object-cover rounded-lg" />
-                  <span className="text-cream/70">Image chargée • Cliquer pour changer</span>
+                  <img
+                    src={value}
+                    alt="Preview"
+                    className="w-12 h-12 object-cover rounded-lg"
+                  />
+                  <span className="text-cream/70">
+                    Image chargée • Cliquer pour changer
+                  </span>
                 </div>
               ) : (
                 <div className="flex items-center justify-center gap-2 py-2">
@@ -436,7 +454,9 @@ function FieldInput({
             </label>
           </div>
           {field.hint && (
-            <p className="text-cream/25 text-[10px] mt-1.5 leading-relaxed">{field.hint}</p>
+            <p className="text-cream/25 text-[10px] mt-1.5 leading-relaxed">
+              {field.hint}
+            </p>
           )}
         </div>
       );

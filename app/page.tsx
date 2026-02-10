@@ -3,6 +3,7 @@ import { LinkCard } from "../components/link-card";
 import { FeaturedQuiz } from "../components/featured-quiz";
 import { siteConfig, nextEvent, links, pastEvents } from "../config/site";
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -17,19 +18,18 @@ export default function Home() {
           style={{ animationDelay: "100ms" }}
         >
           <div className="w-28 h-28 rounded-full border-2 border-gold/60 mx-auto mb-4 overflow-hidden shadow-[0_0_40px_rgba(201,168,76,0.12)]">
-            <img
+            <Image
               src="/logo.svg"
-              alt="Episteme"
+              alt="Transmission"
               className="w-full h-full object-cover"
+              width={120}
+              height={120}
             />
           </div>
-          <h1 className="font-(family-name:--font-playfair) text-3xl font-bold tracking-wide mb-1 text-cream">
+          <h1 className="font-(family-name:---font-audiowide) text-3xl font-bold tracking-wide mb-1 text-cream">
             {siteConfig.name}
           </h1>
           <p className="text-sm text-gold/80 mb-3">{siteConfig.handle}</p>
-          <p className="font-(family-name:--font-playfair) italic text-base text-cream/50 mb-2">
-            {siteConfig.tagline}
-          </p>
           <p className="text-xs text-cream/30 tracking-[3px] uppercase font-light">
             {siteConfig.categories.join(" · ")}
           </p>
@@ -46,7 +46,7 @@ export default function Home() {
               <p className="text-[11px] uppercase tracking-[3px] text-gold/80 font-semibold mb-1.5">
                 Prochain événement
               </p>
-              <h2 className="font-(family-name:--font-playfair) text-[22px] font-bold mb-1 text-cream">
+              <h2 className="font-(family-name:---font-audiowide) text-[22px] font-bold mb-1 text-cream">
                 {nextEvent.name}
               </h2>
               <p className="text-[13px] text-cream/40 mb-5">
@@ -93,7 +93,7 @@ export default function Home() {
                 <p className="text-[11px] uppercase tracking-[3px] text-gold/80 font-semibold mb-1.5">
                   Prochain événement
                 </p>
-                <h2 className="font-(family-name:--font-playfair) text-[22px] font-bold mb-1 text-cream">
+                <h2 className="font-(family-name:---font-audiowide) text-[22px] font-bold mb-1 text-cream">
                   {nextEvent.name}
                 </h2>
                 <p className="text-[13px] text-cream/40 mb-5">
@@ -116,7 +116,7 @@ export default function Home() {
                 </span>
               </div>
               <div className="absolute inset-0 flex flex-col items-center justify-center">
-                <p className="font-(family-name:--font-playfair) text-xl font-bold text-cream mb-2">
+                <p className="font-(family-name:---font-audiowide) text-xl font-bold text-cream mb-2">
                   Quelque chose se prépare...
                 </p>
                 <p className="text-sm text-gold/70">
@@ -134,7 +134,7 @@ export default function Home() {
         </div>
 
         <h3
-          className="font-(family-name:--font-playfair) text-lg text-center text-gold/70 mb-4 animate-fade-in-up"
+          className="font-(family-name:---font-audiowide) text-lg text-center text-gold/70 mb-4 animate-fade-in-up"
           id="events"
           style={{ animationDelay: "600ms" }}
         >
@@ -180,7 +180,7 @@ export default function Home() {
               </svg>
             </a>
           </div>
-          <p>&copy; 2026 Episteme &middot; L&apos;art de faire revivre</p>
+          <p>&copy; 2026 Transmission &middot; L&apos;art de faire revivre</p>
         </footer>
       </div>
     </>

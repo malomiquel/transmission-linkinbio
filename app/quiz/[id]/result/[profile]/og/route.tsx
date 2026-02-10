@@ -5,7 +5,7 @@ export const runtime = "edge";
 
 export async function GET(
   _request: Request,
-  { params }: { params: Promise<{ id: string; profile: string }> }
+  { params }: { params: Promise<{ id: string; profile: string }> },
 ) {
   const { id, profile } = await params;
   const quiz = quizzes[id];
@@ -132,13 +132,13 @@ export async function GET(
         >
           <span>@asso_episteme</span>
           <span>·</span>
-          <span>Episteme</span>
+          <span>Transmission</span>
         </div>
       </div>
     ),
     {
       width: 1200,
       height: 630,
-    }
+    },
   );
 }

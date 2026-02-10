@@ -1,4 +1,9 @@
-export type WineProfile = "bordeaux" | "champagne" | "rhone" | "sancerre" | "chateauneuf";
+export type WineProfile =
+  | "bordeaux"
+  | "champagne"
+  | "rhone"
+  | "sancerre"
+  | "chateauneuf";
 
 export interface Answer {
   text: string;
@@ -17,16 +22,28 @@ export const questions: Question[] = [
       { text: "Dîner aux chandelles", scores: { bordeaux: 3, chateauneuf: 1 } },
       { text: "Apéro entre potes", scores: { rhone: 3, sancerre: 1 } },
       { text: "Soirée dansante", scores: { champagne: 3, rhone: 1 } },
-      { text: "Soirée cosy à la maison", scores: { chateauneuf: 3, bordeaux: 1 } },
+      {
+        text: "Soirée cosy à la maison",
+        scores: { chateauneuf: 3, bordeaux: 1 },
+      },
     ],
   },
   {
     question: "Quel plat te fait craquer ?",
     answers: [
-      { text: "Plateau de fromages affinés", scores: { bordeaux: 3, chateauneuf: 1 } },
-      { text: "Huîtres et fruits de mer", scores: { sancerre: 3, champagne: 1 } },
+      {
+        text: "Plateau de fromages affinés",
+        scores: { bordeaux: 3, chateauneuf: 1 },
+      },
+      {
+        text: "Huîtres et fruits de mer",
+        scores: { sancerre: 3, champagne: 1 },
+      },
       { text: "Côte de boeuf grillée", scores: { rhone: 3, bordeaux: 1 } },
-      { text: "Magret de canard aux figues", scores: { chateauneuf: 3, champagne: 1 } },
+      {
+        text: "Magret de canard aux figues",
+        scores: { chateauneuf: 3, champagne: 1 },
+      },
     ],
   },
   {
@@ -130,7 +147,9 @@ export const results: Record<WineProfile, WineResult> = {
   },
 };
 
-export function calculateResult(scores: Record<WineProfile, number>): WineProfile {
+export function calculateResult(
+  scores: Record<WineProfile, number>,
+): WineProfile {
   let max = 0;
   let winner: WineProfile = "bordeaux";
   for (const [key, value] of Object.entries(scores)) {
@@ -143,7 +162,10 @@ export function calculateResult(scores: Record<WineProfile, number>): WineProfil
 }
 
 export interface QuizConfig {
-  questions: { question: string; answers: { text: string; scores: Record<string, number> }[] }[];
+  questions: {
+    question: string;
+    answers: { text: string; scores: Record<string, number> }[];
+  }[];
   results: Record<string, WineResult>;
   title: string;
   subtitle: string;
@@ -157,12 +179,16 @@ export interface QuizConfig {
 export const wineQuizConfig: QuizConfig = {
   questions: questions.map((q) => ({
     question: q.question,
-    answers: q.answers.map((a) => ({ text: a.text, scores: a.scores as Record<string, number> })),
+    answers: q.answers.map((a) => ({
+      text: a.text,
+      scores: a.scores as Record<string, number>,
+    })),
   })),
   results,
   title: "Quel vin es-tu ?",
-  subtitle: "par Episteme",
-  description: "6 questions pour découvrir quel vin correspond à ta personnalité.",
+  subtitle: "par Transmission",
+  description:
+    "6 questions pour découvrir quel vin correspond à ta personnalité.",
   emoji: "🍷",
   shareFileName: "quel-vin-es-tu",
   shareCta: "Et toi, quel vin es-tu ?",

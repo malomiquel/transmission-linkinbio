@@ -38,7 +38,7 @@ export function Countdown({ targetDate }: CountdownProps) {
 
   if (!timeLeft) {
     return (
-      <p className="font-(family-name:--font-playfair) italic text-gold text-base mb-5">
+      <p className="font-(family-name:---font-audiowide) italic text-gold text-base mb-5">
         L&apos;événement a commencé !
       </p>
     );
