@@ -1,19 +1,23 @@
 @import "tailwindcss";
 
 @theme inline {
-    /* Accent premium (remplace GOLD) */
-    --color-gold: #bfc7d5; /* silver champagne */
-    --color-gold-light: #e4e8f0; /* reflets premium */
+    /* Accent premium (silver) */
+    --color-gold: #c9d2e3; /* silver sky */
+    --color-gold-light: #f2f6ff; /* reflets très clairs */
 
-    /* Accent profond (remplace WINE) */
-    --color-wine: #2c2f4a; /* indigo nuit */
-    --color-wine-dark: #1a1c2e; /* presque noir bleuté */
+    /* Accent profond (indigo, mais moins noir) */
+    --color-wine: #3a3f6a; /* indigo plus vivant */
+    --color-wine-dark: #24284a; /* deep indigo (pas noir) */
 
-    /* Fond & neutres */
-    --color-cream: #f4f6fa; /* blanc froid premium */
-    --color-dark: #0e1018; /* noir bleuté */
-    --color-dark-card: #161a2a;
-    --color-muted: #8a90a8;
+    /* Fond & neutres (plus clair) */
+    --color-cream: #f7f9ff; /* blanc froid + lumineux */
+    --color-dark: #14172a; /* indigo très foncé (moins noir) */
+    --color-dark-card: #1b2040; /* carte indigo */
+    --color-muted: #98a3c4; /* muted plus “happy” */
+
+    /* Bonus (optionnel mais pratique pour les fonds “joyeux”) */
+    --color-bg: #171a33; /* fond global */
+    --color-glow: rgba(201, 210, 227, 0.16); /* halo premium */
 }
 
 body {
